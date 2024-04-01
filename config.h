@@ -29,10 +29,11 @@ static const Rule rules[] = {
 
 	/* class                    instance    title                     tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Gimp",                   NULL,       NULL,                     0,            1,           -1,        50,50,500,500,        5 },
-	{ "Firefox",                NULL,       NULL,                     1 << 8,       0,           -1,        50,50,500,500,        5 },
+	//{ "Firefox",                NULL,       NULL,                     1 << 8,       0,           -1,        50,50,500,500,        5 },
+	{ "firefox",                NULL,       NULL,                     2,       0,           -1,        50,50,500,500,        5 },
 	{ "Blueman-manager",        NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "Pavucontrol",            NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
-	{ "firefox",                "Browser",  "About Mozilla Firefox",  0,            1,           -1,        50,50,640,480,        0 },
+	{ "firefox",                NULL,       "About Mozilla Firefox",  0,            1,           -1,        50,50,640,480,        0 },
 
 };
 
