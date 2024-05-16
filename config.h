@@ -39,6 +39,7 @@ static const Rule rules[] = {
 	{ "Blueman-manager",        NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "Pavucontrol",            NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "firefox",                NULL,       "About Mozilla Firefox",  0,            1,           -1,        50,50,640,480,        0 },
+	{ "Xfce4-appfinder",        NULL,       NULL,                     0,            1,           -1,        50,50,800,600,        0 },
 
 };
 
