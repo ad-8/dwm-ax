@@ -16,7 +16,7 @@ static const char col_gray1[]       = "#2e3440"; // nord polar1
 static const char col_gray2[]       = "#434c5e"; // nord polar3
 static const char col_gray3[]       = "#d8dee9"; // nord snow1
 static const char col_gray4[]       = "#eceff4"; // nord snow3
-static const char col_cyan[]        = "#5e81ac"; // nord frost4
+static const char col_cyan[]        = "#4c566a"; // nord polar4
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -33,9 +33,15 @@ static const Rule rules[] = {
 	 */
 
 	/* class                    instance    title                     tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
+	{ "firefox",                NULL,       NULL,                     1 << 1,       0,           -1,        50,50,500,500,        5 },
+	{ "Code",                   NULL,       NULL,                     1 << 2,       0,           -1,        50,50,500,500,        5 },
+	{ "jetbrains-rustrover",    NULL,       NULL,                     1 << 3,       0,           -1,        50,50,500,500,        5 },
+	{ "qBittorrent",            NULL,       NULL,                     1 << 6,       0,           -1,        50,50,500,500,        5 },
+	// brave webapps have different instance names
+	{ "Brave-browser",          "brave-browser",       NULL,          1 << 7,       0,           -1,        50,50,500,500,        5 },
+	{ "KeePassXC",              NULL,       NULL,                     1 << 8,       0,           -1,        50,50,500,500,        5 },
+	// floating
 	{ "Gimp",                   NULL,       NULL,                     0,            1,           -1,        50,50,500,500,        5 },
-	//{ "Firefox",                NULL,       NULL,                     1 << 8,       0,           -1,        50,50,500,500,        5 },
-	{ "firefox",                NULL,       NULL,                     2,            0,           -1,        50,50,500,500,        5 },
 	{ "Blueman-manager",        NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "Pavucontrol",            NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "firefox",                NULL,       "About Mozilla Firefox",  0,            1,           -1,        50,50,640,480,        0 },
