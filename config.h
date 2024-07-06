@@ -44,6 +44,8 @@ static const Rule rules[] = {
 	{ "Gimp",                   NULL,       NULL,                     0,            1,           -1,        50,50,500,500,        5 },
 	{ "Blueman-manager",        NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "Pavucontrol",            NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
+	// why did this suddenly change to lowercase -.-
+	{ "pavucontrol",            NULL,       NULL,                     0,            1,           -1,        50,50,640,480,        0 },
 	{ "firefox",                NULL,       "About Mozilla Firefox",  0,            1,           -1,        50,50,640,480,        0 },
 	{ "Xfce4-appfinder",        NULL,       NULL,                     0,            1,           -1,        50,50,800,600,        0 },
 
