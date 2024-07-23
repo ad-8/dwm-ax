@@ -16,11 +16,11 @@ static const char col_gray1[]       = "#2e3440"; // nord polar1
 static const char col_gray2[]       = "#434c5e"; // nord polar3
 static const char col_gray3[]       = "#d8dee9"; // nord snow1
 static const char col_gray4[]       = "#eceff4"; // nord snow3
-static const char col_cyan[]        = "#4c566a"; // nord polar4
+static const char col_cyan[]        = "#5e81ac";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  "#d08770"  },
+	[SchemeSel]  = { col_gray4, col_cyan,  "#81a1c1"  },
 };
 
 /* tagging */
