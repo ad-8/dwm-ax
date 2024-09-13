@@ -34,7 +34,7 @@ static const Rule rules[] = {
 
 	/* class                    instance    title                     tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "firefox",                NULL,       NULL,                     1 << 1,       0,           -1,        50,50,500,500,        5 },
-	{ "Code",                   NULL,       NULL,                     1 << 2,       0,           -1,        50,50,500,500,        5 },
+	/* { "Code",                   NULL,       NULL,                     1 << 2,       0,           -1,        50,50,500,500,        5 }, */
 	{ "jetbrains-rustrover",    NULL,       NULL,                     1 << 3,       0,           -1,        50,50,500,500,        5 },
 	{ "qBittorrent",            NULL,       NULL,                     1 << 6,       0,           -1,        50,50,500,500,        5 },
 	// brave webapps have different instance names
