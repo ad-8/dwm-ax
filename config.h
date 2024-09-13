@@ -38,7 +38,8 @@ static const Rule rules[] = {
 	{ "jetbrains-rustrover",    NULL,       NULL,                     1 << 3,       0,           -1,        50,50,500,500,        5 },
 	{ "qBittorrent",            NULL,       NULL,                     1 << 6,       0,           -1,        50,50,500,500,        5 },
 	// brave webapps have different instance names
-	{ "Brave-browser",          "brave-browser",       NULL,          1 << 7,       0,           -1,        50,50,500,500,        5 },
+	{ "Brave-browser",    "brave-browser",  NULL,                     1 << 7,       0,           -1,        50,50,500,500,        5 },
+	{ "strawberry",             NULL,       NULL,                     1 << 7,       0,           -1,        50,50,500,500,        5 },
 	{ "KeePassXC",              NULL,       NULL,                     1 << 8,       0,           -1,        50,50,500,500,        5 },
 	// floating
 	{ "Gimp",                   NULL,       NULL,                     0,            1,           -1,        50,50,500,500,        5 },
