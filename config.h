@@ -12,15 +12,15 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font:size=9" };
 static const char dmenufont[]       = "Hack Nerd Font:size=9";
-static const char col_gray1[]       = "#2e3440"; // nord polar1
-static const char col_gray2[]       = "#434c5e"; // nord polar3
-static const char col_gray3[]       = "#d8dee9"; // nord snow1
-static const char col_gray4[]       = "#eceff4"; // nord snow3
-static const char col_cyan[]        = "#5e81ac";
+static const char col_gray1[]       = "#0c1014"; // gotham base0 (black)
+static const char col_gray2[]       = "#245361"; // gotham base4 (green - greyish)
+static const char col_gray3[]       = "#99d1ce"; // gotham base6 (whice - greenish)
+static const char col_gray4[]       = "#d3ebe9"; // gotham base7 (white - bright) 
+static const char col_cyan[]        = "#195466"; // gotham blue
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  "#81a1c1"  },
+	[SchemeSel]  = { col_gray4, col_cyan,  "#d26937"  }, // gotham orange
 };
 
 /* tagging */
