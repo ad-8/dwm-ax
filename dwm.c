@@ -200,7 +200,7 @@ static void focusstack(const Arg *arg);
 static Atom getatomprop(Client *c, Atom prop);
 static int getrootptr(int *x, int *y);
 static long getstate(Window w);
-static unsigned int getsystraywidth();
+static unsigned int getsystraywidth(void);
 static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
 static void grabbuttons(Client *c, int focused);
 static void grabkeys(void);
@@ -318,6 +318,7 @@ static Window root, wmcheckwin;
 #include "config.h"
 
 static unsigned int scratchtag = 1 << LENGTH(tags);
+static unsigned int refreshrate = 60;  /* default monitor refresh rate */
 
 struct Pertag {
 	unsigned int curtag, prevtag; /* current and previous tag */
@@ -1054,9 +1055,8 @@ getatomprop(Client *c, Atom prop)
 		&da, &format, &nitems, &dl, &p) == Success && p) {
 		if (nitems > 0 && format == 32)
 			atom = *(long *)p;
-	/* FIXME getatomprop should return the number of items and a pointer to
-	 * the stored data instead of this workaround */
 	Atom req = XA_ATOM;
+    int di;
 	if (prop == xatom[XembedInfo])
 		req = xatom[XembedInfo];
 
@@ -1067,6 +1067,7 @@ getatomprop(Client *c, Atom prop)
 			atom = ((Atom *)p)[1];
 		XFree(p);
 	}
+    }
 	return atom;
 }
 
@@ -1099,7 +1100,7 @@ getstate(Window w)
 }
 
 unsigned int
-getsystraywidth()
+getsystraywidth(void)
 {
 	unsigned int w = 0;
 	Client *i;
@@ -1829,16 +1830,14 @@ sendevent(Window w, Atom proto, int mask, long d0, long d1, long d2, long d3, lo
 void
 setfocus(Client *c)
 {
-	if (!c->neverfocus)
-		XSetInputFocus(dpy, c->win, RevertToPointerRoot, CurrentTime);
-	XChangeProperty(dpy, root, netatom[NetActiveWindow], XA_WINDOW, 32,
-		PropModeReplace, (unsigned char *)&c->win, 1);
-	sendevent(c, wmatom[WMTakeFocus]);
-		XChangeProperty(dpy, root, netatom[NetActiveWindow],
-			XA_WINDOW, 32, PropModeReplace,
-			(unsigned char *) &(c->win), 1);
-	}
-	sendevent(c->win, wmatom[WMTakeFocus], NoEventMask, wmatom[WMTakeFocus], CurrentTime, 0, 0, 0);
+    if (!c->neverfocus)
+        XSetInputFocus(dpy, c->win, RevertToPointerRoot, CurrentTime);
+
+    XChangeProperty(dpy, root, netatom[NetActiveWindow], XA_WINDOW, 32,
+                    PropModeReplace, (unsigned char *)&c->win, 1);
+
+    sendevent(c->win, wmatom[WMTakeFocus], NoEventMask,
+              wmatom[WMTakeFocus], CurrentTime, 0, 0, 0);
 }
 
 void
