@@ -72,8 +72,8 @@ static const Layout layouts[] = {
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "|||",      tcl },
 	{ "[D]",      deck },
- 	{ "[@]",      spiral },
  	{ "[\\]",     dwindle },
+ 	{ "[@]",      spiral },
 };
 
 /* key definitions */
