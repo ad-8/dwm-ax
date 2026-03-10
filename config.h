@@ -50,9 +50,9 @@ static const Rule rules[] = {
 	{ "firefox",                NULL,       "About Mozilla Firefox",  0,            1,           -1,        50,50,640,480,        0 },
 	{ "Xfce4-appfinder",        NULL,       NULL,                     0,            1,           -1,        50,50,800,600,        0 },
     // FreeBSD 15.0
-	{ "Alacritty",              NULL,       "ax-top",                 1 << 8,       0,           -1,        50,50,500,500,        5 },
-	{ "Alacritty",              NULL,       "ax-btop",                1 << 8,       0,           -1,        50,50,500,500,        5 },
-	{ "Alacritty",              NULL,       "ax-log",                 1 << 8,       0,           -1,        50,50,500,500,        5 },
+	{ "st-256color",              NULL,       "ax-top",                 1 << 8,       0,           -1,        50,50,500,500,        5 },
+	{ "st-256color",              NULL,       "ax-btop",                1 << 8,       0,           -1,        50,50,500,500,        5 },
+	{ "st-256color",              NULL,       "ax-log",                 1 << 8,       0,           -1,        50,50,500,500,        5 },
 
 };
 
@@ -90,10 +90,9 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "alacritty", "-T", scratchpadname, NULL, NULL, NULL };
-// static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "100x38", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
