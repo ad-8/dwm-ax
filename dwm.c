@@ -1049,25 +1049,22 @@ getatomprop(Client *c, Atom prop)
 	int format;
 	unsigned long nitems, dl;
 	unsigned char *p = NULL;
-	Atom da, atom = None;
+	Atom da, atom = None, req = XA_ATOM;
 
-	if (XGetWindowProperty(dpy, c->win, prop, 0L, sizeof atom, False, XA_ATOM,
-		&da, &format, &nitems, &dl, &p) == Success && p) {
-		if (nitems > 0 && format == 32)
-			atom = *(long *)p;
-	Atom req = XA_ATOM;
-    int di;
+	/* FIXME getatomprop should return the number of items and a pointer to
+	 * the stored data instead of this workaround */
 	if (prop == xatom[XembedInfo])
 		req = xatom[XembedInfo];
 
 	if (XGetWindowProperty(dpy, c->win, prop, 0L, sizeof atom, False, req,
-		&da, &di, &dl, &dl, &p) == Success && p) {
-		atom = *(Atom *)p;
-		if (da == xatom[XembedInfo] && dl == 2)
-			atom = ((Atom *)p)[1];
+		&da, &format, &nitems, &dl, &p) == Success && p) {
+		if (nitems > 0 && format == 32) {
+			atom = *(Atom *)p;
+			if (da == xatom[XembedInfo] && nitems == 2)
+				atom = ((Atom *)p)[1];
+		}
 		XFree(p);
 	}
-    }
 	return atom;
 }
 
